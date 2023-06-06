@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GymModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="MaAdmin" />
+    </Key>
+    <Property Name="MaAdmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTenAdmin" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChiAdmin" Type="nvarchar" MaxLength="50" />
+    <Property Name="DienThoaiAdmin" Type="nvarchar" MaxLength="10" />
+    <Property Name="TenDNAdmin" Type="nvarchar" MaxLength="20" />
+    <Property Name="MatKhauAdmin" Type="nvarchar" MaxLength="20" />
+    <Property Name="NgaySinhAdmin" Type="smalldatetime" />
+    <Property Name="GioiTinhAdmin" Type="bit" />
+    <Property Name="EmailAdmin" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuyenAdmin" Type="int" />
+  </EntityType>
+  <EntityType Name="BaiViet">
+    <Key>
+      <PropertyRef Name="MaBaiViet" />
+    </Key>
+    <Property Name="MaBaiViet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="AnhChuDe" Type="nvarchar(max)" />
+    <Property Name="MaPhanLoai" Type="int" />
+    <Property Name="NgayDang" Type="date" />
+    <Property Name="LuotXem" Type="int" />
+    <Property Name="MaNguoiDung" Type="int" />
+    <Property Name="MaDinhDuong" Type="int" />
+    <Property Name="MaTinTuc" Type="int" />
+    <Property Name="MaKienThuc" Type="int" />
+    <Property Name="TenChuDe" Type="nvarchar(max)" />
+    <Property Name="TieuDe" Type="nvarchar(max)" />
+    <Property Name="MaAdmin" Type="int" />
+    <Property Name="HuongDan" Type="nvarchar(max)" />
+    <Property Name="MaBaiVietKT" Type="int" />
+    <Property Name="MaDanhMuc" Type="int" />
+  </EntityType>
+  <EntityType Name="BaiVietKT">
+    <Key>
+      <PropertyRef Name="MaBaiVietKT" />
+    </Key>
+    <Property Name="MaBaiVietKT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="AnhChuDe" Type="nvarchar(max)" />
+    <Property Name="TenChuDe" Type="nvarchar(max)" />
+    <Property Name="TieuDe" Type="nvarchar(max)" />
+    <Property Name="MaNguoiDung" Type="int" />
+    <Property Name="NgayDang" Type="date" />
+  </EntityType>
+  <EntityType Name="Binhluan">
+    <Key>
+      <PropertyRef Name="MaBinhLuan" />
+    </Key>
+    <Property Name="MaBinhLuan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoiDungBinhLuan" Type="nvarchar(max)" />
+    <Property Name="MaNguoiDung" Type="int" />
+    <Property Name="NgayBinhLuan" Type="date" />
+    <Property Name="MaBaiViet" Type="int" />
+  </EntityType>
+  <EntityType Name="DanhMuc">
+    <Key>
+      <PropertyRef Name="MaDanhMuc" />
+    </Key>
+    <Property Name="MaDanhMuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDanhMuc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DinhDuong">
+    <Key>
+      <PropertyRef Name="Ma_DinhDuong" />
+    </Key>
+    <Property Name="Ma_DinhDuong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar(max)" />
+    <Property Name="TenThucPham" Type="nvarchar(max)" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="Quyen" Type="int" />
+    <Property Name="AnhThucPham" Type="nvarchar(max)" />
+    <Property Name="LuotXem" Type="int" />
+  </EntityType>
+  <EntityType Name="KT">
+    <Key>
+      <PropertyRef Name="MaKienThuc" />
+    </Key>
+    <Property Name="MaKienThuc" Type="int" Nullable="false" />
+    <Property Name="TenKienThuc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NguoiDung">
+    <Key>
+      <PropertyRef Name="MaNguoiDung" />
+    </Key>
+    <Property Name="MaNguoiDung" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNguoiDung" Type="nvarchar" MaxLength="30" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="30" />
+    <Property Name="Gmail" Type="nvarchar" MaxLength="30" />
+    <Property Name="NhapLaiMatKhau" Type="nvarchar" MaxLength="30" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
+    <Property Name="DienThoaiND" Type="nvarchar" MaxLength="10" />
+    <Property Name="DiaChi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PhanLoai">
+    <Key>
+      <PropertyRef Name="MaPhanLoai" />
+    </Key>
+    <Property Name="MaPhanLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPhanLoai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="MaTinTuc" />
+    </Key>
+    <Property Name="MaTinTuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="50" />
+    <Property Name="HinhAnh" Type="nvarchar(max)" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="Tieude2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TraLoi">
+    <Key>
+      <PropertyRef Name="MaTraLoi" />
+    </Key>
+    <Property Name="MaTraLoi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaBinhLuan" Type="int" />
+    <Property Name="MaNguoiDung" Type="int" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="NgayDang" Type="date" />
+  </EntityType>
+  <Association Name="FK_BaiViet_ADMIN">
+    <End Role="ADMIN" Type="Self.ADMIN" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADMIN">
+        <PropertyRef Name="MaAdmin" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaAdmin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_BaiVietKT">
+    <End Role="BaiVietKT" Type="Self.BaiVietKT" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaiVietKT">
+        <PropertyRef Name="MaBaiVietKT" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaBaiVietKT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_DanhMuc">
+    <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="MaDanhMuc" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_DinhDuong">
+    <End Role="DinhDuong" Type="Self.DinhDuong" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DinhDuong">
+        <PropertyRef Name="Ma_DinhDuong" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaDinhDuong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_KT">
+    <End Role="KT" Type="Self.KT" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KT">
+        <PropertyRef Name="MaKienThuc" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaKienThuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_NguoiDung">
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguoiDung">
+        <PropertyRef Name="MaNguoiDung" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_PhanLoai">
+    <End Role="PhanLoai" Type="Self.PhanLoai" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhanLoai">
+        <PropertyRef Name="MaPhanLoai" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaPhanLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaiViet_TinTuc">
+    <End Role="TinTuc" Type="Self.TinTuc" Multiplicity="0..1" />
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TinTuc">
+        <PropertyRef Name="MaTinTuc" />
+      </Principal>
+      <Dependent Role="BaiViet">
+        <PropertyRef Name="MaTinTuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Binhluan_BaiViet">
+    <End Role="BaiViet" Type="Self.BaiViet" Multiplicity="0..1" />
+    <End Role="Binhluan" Type="Self.Binhluan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaiViet">
+        <PropertyRef Name="MaBaiViet" />
+      </Principal>
+      <Dependent Role="Binhluan">
+        <PropertyRef Name="MaBaiViet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Binhluan_NguoiDung">
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+    <End Role="Binhluan" Type="Self.Binhluan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguoiDung">
+        <PropertyRef Name="MaNguoiDung" />
+      </Principal>
+      <Dependent Role="Binhluan">
+        <PropertyRef Name="MaNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraLoi_Binhluan">
+    <End Role="Binhluan" Type="Self.Binhluan" Multiplicity="0..1" />
+    <End Role="TraLoi" Type="Self.TraLoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Binhluan">
+        <PropertyRef Name="MaBinhLuan" />
+      </Principal>
+      <Dependent Role="TraLoi">
+        <PropertyRef Name="MaBinhLuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraLoi_NguoiDung">
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+    <End Role="TraLoi" Type="Self.TraLoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguoiDung">
+        <PropertyRef Name="MaNguoiDung" />
+      </Principal>
+      <Dependent Role="TraLoi">
+        <PropertyRef Name="MaNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GymModelStoreContainer">
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BaiViet" EntityType="Self.BaiViet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BaiVietKT" EntityType="Self.BaiVietKT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Binhluan" EntityType="Self.Binhluan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DinhDuong" EntityType="Self.DinhDuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KT" EntityType="Self.KT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanLoai" EntityType="Self.PhanLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TraLoi" EntityType="Self.TraLoi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BaiViet_ADMIN" Association="Self.FK_BaiViet_ADMIN">
+      <End Role="ADMIN" EntitySet="ADMIN" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_BaiVietKT" Association="Self.FK_BaiViet_BaiVietKT">
+      <End Role="BaiVietKT" EntitySet="BaiVietKT" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_DanhMuc" Association="Self.FK_BaiViet_DanhMuc">
+      <End Role="DanhMuc" EntitySet="DanhMuc" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_DinhDuong" Association="Self.FK_BaiViet_DinhDuong">
+      <End Role="DinhDuong" EntitySet="DinhDuong" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_KT" Association="Self.FK_BaiViet_KT">
+      <End Role="KT" EntitySet="KT" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_NguoiDung" Association="Self.FK_BaiViet_NguoiDung">
+      <End Role="NguoiDung" EntitySet="NguoiDung" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_PhanLoai" Association="Self.FK_BaiViet_PhanLoai">
+      <End Role="PhanLoai" EntitySet="PhanLoai" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaiViet_TinTuc" Association="Self.FK_BaiViet_TinTuc">
+      <End Role="TinTuc" EntitySet="TinTuc" />
+      <End Role="BaiViet" EntitySet="BaiViet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Binhluan_BaiViet" Association="Self.FK_Binhluan_BaiViet">
+      <End Role="BaiViet" EntitySet="BaiViet" />
+      <End Role="Binhluan" EntitySet="Binhluan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Binhluan_NguoiDung" Association="Self.FK_Binhluan_NguoiDung">
+      <End Role="NguoiDung" EntitySet="NguoiDung" />
+      <End Role="Binhluan" EntitySet="Binhluan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraLoi_Binhluan" Association="Self.FK_TraLoi_Binhluan">
+      <End Role="Binhluan" EntitySet="Binhluan" />
+      <End Role="TraLoi" EntitySet="TraLoi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraLoi_NguoiDung" Association="Self.FK_TraLoi_NguoiDung">
+      <End Role="NguoiDung" EntitySet="NguoiDung" />
+      <End Role="TraLoi" EntitySet="TraLoi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

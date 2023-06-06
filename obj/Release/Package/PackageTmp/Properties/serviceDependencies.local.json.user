@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2021-02-24T07:06:08.4904163Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2021-02-24T07:06:15.4707321Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Type": "subscription",
+      "Value": "96b626e4-75eb-40ff-9c4f-d82194c90d04"
+    },
+    "mssql1.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "Gymer20210224090516ResourceGroup"
+    }
+  }
+}

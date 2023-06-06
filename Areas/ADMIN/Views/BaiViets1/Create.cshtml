@@ -1,0 +1,89 @@
+﻿@model Gymer.Models.BaiViet
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/ADMIN/Views/Layout/Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <b class="btn btn-dark container ">Bài Viết</b>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        &nbsp;&nbsp; <b>Tên chủ đề</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenChuDe, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenChuDe, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        &nbsp;&nbsp; <b>Nội dung</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NoiDung, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NoiDung, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;<b>Ảnh chủ đề</b>
+        <div class="col-md-10">
+            <input type="file" class="btn btn-danger" name="fileUpload" required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;<b>Ngày đăng</b>
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.NgayDang, new { htmlAttributes = new { @class = "form-control" } })*@
+            <input type="date" name="NgayDang" class="form-control" required />
+            @Html.ValidationMessageFor(model => model.NgayDang, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp; <b>Lượt xem</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LuotXem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LuotXem, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" hidden>
+        @Html.LabelFor(model => model.MaAdmin, "MaAdmin", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("MaAdmin", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MaAdmin, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp; <b>Hướng dẫn</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.HuongDan, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.HuongDan, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp; <b>Mã danh mục</b>
+        <div class="col-md-10">
+            @Html.DropDownList("MaDanhMucPhanCap", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MaDanhMucPhanCap, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Tạo bài viết" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

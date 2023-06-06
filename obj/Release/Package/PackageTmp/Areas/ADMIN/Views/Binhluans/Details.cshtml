@@ -1,0 +1,51 @@
+﻿@model Gymer.Models.Binhluan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/ADMIN/Views/Layout/Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Binhluan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDungBinhLuan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDungBinhLuan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBinhLuan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBinhLuan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaiViet.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaiViet.NoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiDung.TenNguoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiDung.TenNguoiDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBinhLuan }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,90 @@
+﻿@using Gymer.Models;
+@model BaiViet
+@{ ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Layout/Layout.cshtml"; }
+
+<div class="banner_w3lspvt">
+    <div class="csslider infinity" id="slider1">
+
+        <div class="banner_slide_bg">
+
+            <img src="~/Content/Img/nenbt.jpg" height="500" ; width="1350" />
+            <div class="container">
+                <div class="banner-text">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div style="margin-top:130px">
+    <div class="list-group" style="width: 75%; float: left; margin-top:-18%;">
+        <div style="margin-left:4%;">
+            <b style="font-family:Arial; font-size: 30px; color:red ">@Model.TenChuDe </b>
+            <h2>Người đăng :@Model.ADMIN.TenDNAdmin</h2>
+            <h2 id="luotxem">@Model.LuotXem</h2>
+            <p style="font-weight:900; color:blue">Ngày Đăng: @Model.NgayDang.Value.ToLongDateString()</p>
+            <p>@Model.NoiDung</p>
+            @*<p>@Model.ADMIN.HoTenAdmin</p>*@
+
+            <br />
+            <img src="~/Content/Img/@Model.AnhChuDe" style="height:440px;width:620px" />
+            <br />
+            <br />
+            <p>@Model.HuongDan</p>
+        </div>
+        <!--Chi se lien ket-->
+        @*<div class="socials-share" style="margin-top:20px">
+            <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://gymer.azurewebsites.net/ChiTietBaiTap/ChiTiet?machitiet=@Model.MaBaiViet" target="_blank"><span class="fa fa-facebook"></span> Share</a>
+        </div>*@
+        <div class="socials-share">
+            <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://gymer.azurewebsites.net/ChiTietBaiTap/ChiTiet?machitiet=@Model.MaBaiViet" target="_blank"><span class="fa fa-facebook"></span> Share</a>
+            <a class="bg-twitter" href="https://twitter.com/share?text=@Model.TenChuDe&url=http://gymer.azurewebsites.net/ChiTietBaiTap/ChiTiet?machitiet=@Model.MaBaiViet" target="_blank"><span class="fa fa-twitter"></span> Tweet</a>
+            <a class="bg-google-plus" href="" target="_blank"><span class="fa fa-google-plus"></span> Plus</a>
+            <a class="bg-pinterest" href="" target="_blank"><span class="fa fa-pinterest"></span> Pin</a>
+            <a class="bg-email" href="" target="_blank"><span class="fa fa-envelope"></span> Gmail</a>
+        </div>
+        <!--Chia se lien ket-->
+
+    </div>
+
+    <div class="list-group" style="width: 20%; float: right; margin-top:-18%">
+        @Html.Action("BaiVietMoiNhat", "HienThi")
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+@Html.Action("Index", "BinhLuan", new { @id = Model.MaBaiViet })
+
+<script type="text/javascript">
+    window.___gcfg = { lang: 'vi' };
+    (function () {
+        var po = document.createElement('script'); po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+
+<input type="hidden" value="@Model.MaBaiViet" id="mabvkt" />
+<script>
+    setTimeout(function () {
+        var id = document.getElementById("mabvkt").value;
+        debugger
+        $.ajax({
+            type: "POST",
+            url: "/BaiTapGym/TangLuotXem?id=" + id,
+            contentType: "json",
+            success: function (response) {
+                $("#luotxem").html('<h2>Luot xem: ' + response + '</h2>')
+            }
+        })
+    }, 10000)</script>

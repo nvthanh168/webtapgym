@@ -1,0 +1,26 @@
+﻿@using Gymer.Models;
+@model List<DanhMuc>
+
+@foreach (var item in Model)
+{
+<li>
+    @*<a href="@Url.Action("BaiTap","BaiTapGym", new {@id = item.MaDanhMuc })" class="drop-text">@item.TenDanhMuc</a>*@
+     <label for="drop-2" class="toggle">
+                Dropdown
+                <span class="fa fa-angle-down" aria-hidden="true">
+
+                </span>
+        </label>
+    <a href="#" class="toggle">
+        @*@item.TenDanhMuc*@
+                @foreach (var jtem in item.DanhMucPhanCaps)
+                {
+                    <li>
+                        <a href="@Url.Action("BaiTap","BaiTapGym", new {@id = jtem.MaDanhMucPhanCap})" class="drop-text">@jtem.TenDanhMucPhanCap</a>
+                    </li>
+                 }
+             </a>
+</li>}
+
+
+

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Gymer.Models.Binhluan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ADMIN/Views/Layout/Layout.cshtml";
+}
+
+<h2>Quản lí bình luận</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <p>Người dùng bình luận</p>
+        </th>
+        <th>
+            <p>Ngày bình luận</p>
+        </th>
+        <th>
+            <p>Bài viết bình luận</p>
+        </th>
+        <th>
+            <p>Tài khoản</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDungBinhLuan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBinhLuan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BaiViet.NoiDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NguoiDung.TenNguoiDung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaBinhLuan }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaBinhLuan }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaBinhLuan })
+        </td>
+    </tr>
+}
+
+</table>

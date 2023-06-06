@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Gymer.Models.LichSuBaiViet>
+@{
+    int stt = 0;
+}
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Layout/Layout.cshtml"; 
+}
+<div class="banner_w3lspvt">
+    <div class="csslider infinity" id="slider1">
+
+        <div class="banner_slide_bg">
+
+            <img src="~/Content/Banner/Banner6.jpg" height="500" ; width="1350" />
+            <div class="container">
+                <div class="banner-text">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div style="margin-top:-10%;font-size:15px" class="container">
+    <b style="text-align:center; color:red;font-size:20px">Nhật kí hoạt động</b>
+    <table class="table  table-bordered table-striped ">
+        <thead>
+            <tr>
+                <th>Số thứ tự</th>
+                <th>Nội dung</th>
+                <th>Ngày Xem</th>
+                <th>ảnh</th>
+                <th>Link bài viết</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                stt++;
+                <tr>
+                    <th>@stt</th>
+                    <th>@item.BaiViet.NoiDung</th>
+                    <th>@item.NgayXem</th>
+                    <th><img src="~/Content/Img/@item.BaiViet.AnhChuDe" style="width: 100px; height: 100px" /></th>
+                    <th><a href="@Url.Action("ChiTiet","ChiTietBaiTap", new {@machitiet = item.MaBaiViet })">Link bài viết</a></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

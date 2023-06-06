@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Gymer.Models.DanhMuc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ADMIN/Views/Layout/Layout.cshtml";
+}
+
+<h2>Danh Mục</h2>
+
+<a href="/ADMIN/DanhMucs/Create" class="btn btn-danger" style="width: 30%; height: 35px"><b style="color: white">Thêm Danh Mục </b></a>
+<table class="table">
+    <tr>
+        <th>
+            <b>Tên Danh Mục</b>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDanhMuc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaDanhMuc }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaDanhMuc }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaDanhMuc })
+        </td>
+    </tr>
+}
+
+</table>

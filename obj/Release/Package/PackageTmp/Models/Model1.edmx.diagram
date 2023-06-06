@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40a8838638b248dbab6cc652ee39186c" Name="Diagram1">
+        <EntityTypeShape EntityType="GymModel.ADMIN" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.BaiViet" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.Binhluan" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.DanhMuc" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.DanhMucPhanCap" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.LichSuBaiViet" Width="1.5" PointX="10.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.NguoiDung" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.TinTuc" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.TraLoi" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.database_firewall_rules" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="GymModel.FK_BaiViet_ADMIN" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_BaiViet_DanhMucPhanCap" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_Binhluan_BaiViet" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_LichSuBaiViet_BaiViet" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_Binhluan_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_TraLoi_Binhluan" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_DanhMucPhanCap_DanhMuc" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_LichSuBaiViet_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="GymModel.FK_TraLoi_NguoiDung" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
